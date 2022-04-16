@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.chart.LineChart?>
+<?import javafx.scene.chart.NumberAxis?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.MenuButton?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.FlowPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+<AnchorPane xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.Controleur">
+	<children>
+		<BorderPane prefHeight="600.0" prefWidth="601.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+			<top>
+				<FlowPane prefHeight="26.0" prefWidth="600.0" BorderPane.alignment="CENTER" />
+			</top>
+			<center>
+				<SplitPane fx:id="splitLeft" dividerPositions="0.3172" minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+					<items>
+						<AnchorPane fx:id="paneLeft">
+							<children>
+                        <VBox AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                           <children>
+                              <HBox prefHeight="28.0">
+                                 <children>
+                                    <AnchorPane fx:id="addPane">
+                                       <children>
+                  								<MenuButton mnemonicParsing="false" styleClass="add-text-field-button" stylesheets="@application.css" text="Options">
+                  									<items>
+                  										<MenuItem fx:id="addTextField" mnemonicParsing="false" styleClass=".expression-menu-item" text="Expression" />
+                                                <MenuItem fx:id="clavier" mnemonicParsing="false" text="Clavier" />
+                  									</items>
+                  								</MenuButton>
+                                       </children>
+                                    </AnchorPane>
+                                 </children>
+                              </HBox>
+                              <VBox fx:id="leftControl" fillWidth="false">
+                                 <children>
+                                    <ScrollPane fx:id="scrollPane" fitToHeight="true" fitToWidth="true" prefHeight="541.0" prefWidth="230.0">
+                                      <content>
+                                        <AnchorPane fx:id="paneScroll" prefHeight="539.0" prefWidth="165.0">
+                                             <children>
+                                                <VBox fx:id="leftChamp" prefHeight="538.0" prefWidth="187.0" />
+                                             </children>
+                                          </AnchorPane>
+                                      </content>
+                                    </ScrollPane>
+                                 </children>
+                              </VBox>
+                           </children>
+                        </VBox>
+							</children>
+						</AnchorPane>
+						<AnchorPane fx:id="paneRight" minHeight="0.0" minWidth="0.0">
+                     <children>
+                        <VBox AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                           <children>
+                              <AnchorPane fx:id="graphique" prefHeight="900.0">
+                                 <children>
+                                    <LineChart fx:id="lineChart" layoutX="-2.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                      <xAxis>
+                                        <NumberAxis autoRanging="false" label="x" lowerBound="-10.0" opacity="0.9" prefHeight="37.0" prefWidth="352.0" side="BOTTOM" styleClass="axis-label" stylesheets="@application.css" tickLabelFill="#141414" tickLabelGap="2.0" tickUnit="2.0" upperBound="10.0" fx:id="xAxis" />
+                                      </xAxis>
+                                      <yAxis>
+                                        <NumberAxis fx:id="yAxis" autoRanging="false" label="y" lowerBound="-10.0" prefHeight="502.0" prefWidth="37.0" side="LEFT" styleClass="axis-label" stylesheets="@application.css" tickUnit="2.0" upperBound="10.0" />
+                                      </yAxis>
+                                    </LineChart>
+                                    <VBox layoutX="308.0" prefHeight="569.0" prefWidth="405.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                       <children>
+                                          <Button fx:id="reglage" mnemonicParsing="false" prefHeight="26.0" prefWidth="97.0" styleClass="reglage-button" stylesheets="@application.css" text="Réglages" />
+                                          <VBox maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="450.0" prefWidth="275.0">
+                                             <children>
+                                                <AnchorPane fx:id="formReglage" prefHeight="456.0" prefWidth="275.0" style="-fx-background-color: white;" visible="false">
+                                                   <children>
+                                                      <Label alignment="CENTER" layoutX="95.0" layoutY="1.0" prefHeight="26.0" prefWidth="76.0" text="Graphique" />
+                                                      <AnchorPane layoutX="-3.0" layoutY="40.0" prefHeight="24.0" prefWidth="183.0">
+                                                         <children>
+                                                            <RadioButton fx:id="contraste" layoutX="4.0" layoutY="3.0" mnemonicParsing="false" text="Contraste" />
+                                                         </children>
+                                                      </AnchorPane>
+                                                      <AnchorPane layoutX="1.0" layoutY="76.0" prefHeight="66.0" prefWidth="275.0">
+                                                         <children>
+                                                            <RadioButton fx:id="grille" layoutY="5.0" mnemonicParsing="false" selected="true" text="Grille" />
+                                                            <RadioButton fx:id="axeNombre" layoutY="23.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="139.0" selected="true" text="Axe des nombres" />
+                                                         </children>
+                                                      </AnchorPane>
+                                                      <AnchorPane layoutX="1.0" layoutY="142.0" prefHeight="144.0" prefWidth="263.0">
+                                                         <children>
+                                                            <RadioButton fx:id="abscisses" layoutY="14.0" mnemonicParsing="false" selected="true" text="Axe des x" />
+                                                            <TextField layoutX="110.0" layoutY="10.0" prefHeight="19.0" prefWidth="130.0" text="x" fx:id="xLegende" />
+                                                            <TextField layoutX="23.0" layoutY="59.0" prefHeight="26.0" prefWidth="43.0" text="-10" fx:id="xBorneInf" />
+                                                            <Label layoutX="76.0" layoutY="64.0" text="&lt;= x &lt;=" />
+                                                            <TextField layoutX="145.0" layoutY="59.0" prefHeight="26.0" prefWidth="39.0" text="10" fx:id="xBorneSup" />
+                                                            <Label layoutX="34.0" layoutY="109.0" text="Pas :" />
+                                                            <TextField layoutX="76.0" layoutY="104.0" prefHeight="26.0" prefWidth="42.0" text="2" fx:id="xPas" />
+                                                         </children>
+                                                      </AnchorPane>
+                                                      <AnchorPane layoutX="7.0" layoutY="286.0" prefHeight="144.0" prefWidth="263.0">
+                                                         <children>
+                                                            <RadioButton fx:id="coordonnees" layoutY="14.0" mnemonicParsing="false" selected="true" text="Axe des y" />
+                                                            <TextField fx:id="yLegende" layoutX="110.0" layoutY="10.0" prefHeight="19.0" prefWidth="130.0" text="y" />
+                                                            <TextField fx:id="yBorneInf" layoutX="23.0" layoutY="59.0" prefHeight="26.0" prefWidth="43.0" text="-10" />
+                                                            <Label layoutX="76.0" layoutY="64.0" text="&lt;= y &lt;=" />
+                                                            <TextField fx:id="yBorneSup" layoutX="144.0" layoutY="59.0" prefHeight="26.0" prefWidth="39.0" text="10" />
+                                                            <Label layoutX="34.0" layoutY="109.0" text="Pas :" />
+                                                            <TextField fx:id="yPas" layoutX="76.0" layoutY="104.0" prefHeight="26.0" prefWidth="42.0" text="2" />
+                                                         </children>
+                                                      </AnchorPane>
+                                                   </children>
+                                                </AnchorPane>
+                                             </children>
+                                          </VBox>
+                                       </children>
+                                    </VBox>
+                                 </children>
+                              </AnchorPane>
+                           </children>
+                        </VBox>
+                     </children>
+                  </AnchorPane>
+					</items>
+				</SplitPane>
+			</center>
+		</BorderPane>
+	</children>
+</AnchorPane>

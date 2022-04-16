@@ -1,0 +1,72 @@
+/* JavaFX CSS - Leave this comment until you have at least create one rule which uses -fx-Property */
+.chart { 
+    -fx-background-color: white; 
+} 
+ .chart-plot-background { 
+ 	-fx-background-color: white; 
+}
+
+.chart-vertical-grid-lines {
+	-fx-stroke : #999999;
+}
+
+.chart-horizontal-grid-lines {
+	-fx-stroke : #999999;
+}
+
+.chart-vertical-zero-line {
+	-fx-stroke: black;
+}
+
+.chart-horizontal-zero-line {
+	-fx-stroke: black;
+}
+
+.vbox-left-control {
+	-fx-background-color: white;
+}
+
+.reglage-button, .add-text-field-button {
+	-fx-background-color: #f8f8f8, linear-gradient(#D8D9DB 0%, #fff 80%, #FDFDFD 100%);
+	-fx-text-fill: #606060;
+	
+	-fx-border-color: #8F9092;
+	-fx-highlight-bottom: #FCFCFC;
+	-fx-shadow-bottom: #D6D7D9;
+-fx-shadow-top:  #CECFD1;
+-fx-highlight-top: #FEFEFE;
+-fx-shadow-inset: inset 0 0 3px 0 #CECFD1;
+-fx-shadow-inset-hover: inset 0 0 3px 3px #CECFD1;
+-fx-shadow-inset-focus: inset 0 0 10px 0px rgba(0, 0, 250, .6);
+-fx-shadow-inset-active: inset 0 0 5px 3px #999, inset 0 0 30px #aaa;
+}  
+
+
+
+.reglage-button:hover, .add-text-field-button:hover {
+	-fx-cursor: hand;
+		-fx-background-color : 
+	linear-gradient(from 0% 93% to 0% 100%, #808080 0%, #808080 100%), #C0C0C0, #C0C0C0,
+	radial-gradient(center 50% 50%, radius 100%, #C0C0C0, #C0C0C0);
+	-fx-text-fill : black; 
+}
+
+.menu-item:focused {
+	-fx-cursor : hand;
+	-fx-background-color : #C0C0C0;
+}
+
+.axis-label {
+	-fx-text-fill : #777;
+}
+
+
+.split-pane *.split-pane-divider {
+	-fx-padding : 0 1 0 1;
+	-fx-cursor : none;
+}
+
+
+
+    
+
